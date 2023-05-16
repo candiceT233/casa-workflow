@@ -1,0 +1,74 @@
+//************************UM_VEL_config.txt********************************//
+//*****$Id:UM_VEL_config.txt, v 1.00 2018-04-27 14:21:13 elyons Exp $******//
+//***********Copyright 2018 University of Massachusetts Amherst************//
+//**************************All rights reserved****************************//
+//*************************************************************************//
+//*************************************************************************//
+//****UM_VEL_config.txt is used by the 'UM_VEL' program. Do not rename*****//
+//**The UM_VEL_HOME environment variable defines UM_VEL_config's location**//
+//**********Make sure all lines are terminated with a semi-colon***********//
+//*************************************************************************//
+
+//string ncdir is the output directory for netcdf files
+ncdir = ".";
+//ncdir = "/home/ldm/data/UM_VEL";
+//ncdir = "/home/ldm/UM_VEL";
+
+//int routine determines the method for gridding
+//0=mean 1=max  default is mean
+routine = 1;
+
+//int truemap realistically maps the beam shape to the grid
+//0 = just the front center of the beam 1 = all corners front and back
+//truemap increases runtime substantially
+truemap = 0;
+
+//int smoothing adds a layer of inverse distance weighted smoothing
+//0 = off 1 = on
+smoothing = 1;
+
+//int smoothvoxels is the number of adjacent grid cells that will be considered
+//default is 12
+smoothvoxels = 2;
+
+//float nlat is the northern most point in the grid
+nlat = 33.9098;
+
+//float wlon is the western most point in the grid
+wlon = -98.4963;
+
+//int numlats is the number of lats
+numlats = 373;
+
+//int numlons is the number of lons
+numlons = 373;
+
+//float latspac is the latitude grid spacing in degrees
+latspac = .00675;
+
+//float lonspac is the longitude grid spacing in degrees
+lonspac = .00804;
+
+//float minalt is the minimum altitude (m) ARL
+minalt = 200.0;
+
+//float maxalt is the maximum altitude (m) ARL
+maxalt = 600.0;
+
+//float mintilt is the minimum elevation angle of the radar to consider
+mintilt = 0.0;
+
+//float maxtilt is the maximum elevation angle of the radar to consider
+maxtilt = 6.1;
+
+//string varname is the name of the variable to be merged
+varname = "Velocity";
+
+//string units is the units of the varname
+units = "m/s";
+
+//float minval sets a value beneath which the algorithm will ignore
+minval = 0.0;
+
+//float maxval sets a value above which the algorithm will ignore
+maxval = 38.0;
