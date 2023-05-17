@@ -10,7 +10,7 @@ Container: https://hub.docker.com/r/pegasus/casa-wind \
 Workflow: https://github.com/pegasus-isi/casa-wind-workflow
 
 
-# TODO
+# TODO: casa-nowcast
 Currently the test script `casa-nowcast/test/test_nowcast.sh` seems not working correctly.
 ### (1) NowcastToWDSS2 gives many netCDF4 warnings
 ```
