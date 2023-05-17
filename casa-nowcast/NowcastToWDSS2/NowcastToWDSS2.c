@@ -39,7 +39,8 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
   char dd[3];
   char hh[3];
   char mm[3];
-  int ymd_start = (int)filename_len - 15;
+  // int ymd_start = (int)filename_len - 15;
+  int ymd_start = (int)filename_len - 16;
   memcpy(yyyy, &i_filename[ymd_start], 4);
   yyyy[4] = '\0';
   memcpy(mon, &i_filename[ymd_start+4], 2);
@@ -52,7 +53,7 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
   mm[2] = '\0';
   starttime[15] = '\0';
   sprintf(starttime, "%s%s%s-%s%s00", yyyy, mon, dd, hh, mm);
-  //printf("%s\n", starttime);
+  printf("starttime: %s\n", starttime);
 
   status = nc_open(i_filename, NC_NOWRITE, &ncid);
   handle_error(status);
@@ -78,8 +79,10 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
   status = nc_inq_attlen(ncid, NC_GLOBAL, "Time", &t_len);
   handle_error(status);
 
-  //timestamp = (char *)malloc(t_len + 1);
-  //status = nc_get_att_text(ncid, NC_GLOBAL, "Time", timestamp);
+  // // Candice uncommented this
+  // char *timestamp;
+  // timestamp = (char *)malloc(t_len + 1);
+  // status = nc_get_att_text(ncid, NC_GLOBAL, "Time", timestamp);
   
   count[0] = 1;
   count[1] = NLAT;
@@ -87,6 +90,7 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
 
   
   for (i=0;i<NSTEPS;i++) {
+    printf("nsteps: %d\n", i);
     start[0] = i;
     start[1] = 0;
     start[2] = 0;
