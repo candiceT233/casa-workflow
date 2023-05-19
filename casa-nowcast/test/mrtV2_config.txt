@@ -34,13 +34,13 @@ gns_port = [ 30986 ] ;
 };
 
 //bool file_output determines whether we create a file containing rt output
-file_output = false;
+file_output = true;
 
 //string file_name is the name of the mrtV2 output text file.  Detections are appended.
 file_name = "./mrt.txt";
 
 //bool netcdf_output determines whether we generate a netcdf file containing the detections.
-netcdf_output = false;
+netcdf_output = true;
 
 //string netcdf_directory is the output directory for netcdf files if netcdf_output is true
 netcdf_directory = "./output";

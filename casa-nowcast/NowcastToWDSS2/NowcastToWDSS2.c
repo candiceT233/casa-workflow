@@ -53,7 +53,7 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
   mm[2] = '\0';
   starttime[15] = '\0';
   sprintf(starttime, "%s%s%s-%s%s00", yyyy, mon, dd, hh, mm);
-  printf("starttime: %s\n", starttime);
+  // printf("starttime: %s\n", starttime);
 
   status = nc_open(i_filename, NC_NOWRITE, &ncid);
   handle_error(status);
@@ -90,7 +90,7 @@ int NowcastToWDSS2(char i_filename[], char o_directory[])
 
   
   for (i=0;i<NSTEPS;i++) {
-    printf("nsteps: %d\n", i);
+    // printf("nsteps: %d\n", i);
     start[0] = i;
     start[1] = 0;
     start[2] = 0;
